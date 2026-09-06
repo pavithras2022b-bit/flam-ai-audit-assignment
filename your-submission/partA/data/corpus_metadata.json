@@ -1,0 +1,56 @@
+{
+  "source_dataset": "FLORES-200",
+  "source_url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+  "split": "devtest",
+  "archive_path": "partA\\data\\raw\\flores200_dataset.tar.gz",
+  "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+  "output_path": "partA\\data\\eval_parallel.jsonl",
+  "output_sha256": "5dfb45774fae3ad78c7f850995661c41f43dbe4fcc76a215ff6cef6daaa16fdb",
+  "parallel_sentences": 1012,
+  "languages": [
+    "eng_Latn",
+    "hin_Deva",
+    "kan_Knda",
+    "tam_Taml",
+    "tel_Telu",
+    "ben_Beng",
+    "mar_Deva"
+  ],
+  "language_files": {
+    "eng_Latn": {
+      "lines": 1012,
+      "sha256": "612e9fbe87997617c0fa8fa8929654a4f49b728d96738112c2b86ef6a1d78d88"
+    },
+    "hin_Deva": {
+      "lines": 1012,
+      "sha256": "5f5fd39acadca29fb044a0398e81869e48f37de979df086f2fad4a7d1fd2d015"
+    },
+    "kan_Knda": {
+      "lines": 1012,
+      "sha256": "58e8ed5ef79cfd9994e7d4010d22b5ce72c3559f0c8e988fbde11fa58a720cd8"
+    },
+    "tam_Taml": {
+      "lines": 1012,
+      "sha256": "a18b26bf278e458f085c70173d6789d6108cb2e3346c81a1bd0f8aceb4ea30e4"
+    },
+    "tel_Telu": {
+      "lines": 1012,
+      "sha256": "2dc641b4fb69347efe4b0c0f2063372c643f20c664b41a1f4421b69ba2a06420"
+    },
+    "ben_Beng": {
+      "lines": 1012,
+      "sha256": "6699aa77b4c93d520971868cd5ff06a1e3b5ddfde852da13337f5194bc23086f"
+    },
+    "mar_Deva": {
+      "lines": 1012,
+      "sha256": "63d0d1bfdcfa7f8a1538c87cab65b0e5e010515529ed286b1f8b2a51cc62b99f"
+    }
+  },
+  "build_preprocessing": {
+    "line_terminators": "removed by str.splitlines()",
+    "blank_lines": "preserved during loading; any blank aligned row fails",
+    "outer_whitespace": "stripped only after alignment validation",
+    "text_content": "no case, punctuation, or Unicode normalization",
+    "alignment": "source line index shared across every language"
+  }
+}

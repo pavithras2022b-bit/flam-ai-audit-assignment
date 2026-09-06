@@ -1,0 +1,57 @@
+{
+  "corpus_path": "partA\\data\\eval_parallel.jsonl",
+  "corpus_sha256": "5dfb45774fae3ad78c7f850995661c41f43dbe4fcc76a215ff6cef6daaa16fdb",
+  "parallel_sentences": 1012,
+  "languages": [
+    "eng_Latn",
+    "hin_Deva",
+    "kan_Knda",
+    "tam_Taml",
+    "tel_Telu",
+    "ben_Beng",
+    "mar_Deva"
+  ],
+  "preprocessing": {
+    "unicode_normalization": "NFC",
+    "case": "preserved",
+    "punctuation": "preserved",
+    "outer_whitespace": "stripped"
+  },
+  "headline_metric": "ratio of total tokens across aligned sentences to English total",
+  "secondary_metrics": "pooled tokens per whitespace word, grapheme cluster, and UTF-8 byte",
+  "bootstrap": {
+    "method": "paired sentence resampling, percentile 95% interval",
+    "samples": 1000,
+    "seed": 42
+  },
+  "tokenizers": {
+    "gpt2": {
+      "name": "GPT-2 (tiktoken)",
+      "source": "gpt2",
+      "kind": "tiktoken",
+      "revision": "tiktoken-0.14.0",
+      "role": "English-centric decoder-tokenizer baseline"
+    },
+    "indicbert": {
+      "name": "IndicBERTv2 tokenizer",
+      "source": "ai4bharat/IndicBERTv2-MLM-only",
+      "kind": "huggingface",
+      "revision": "8598f13fe52443bc3fc054fcd665944560145b5c",
+      "role": "Indic-aware reference tokenizer; not a drop-in decoder model"
+    },
+    "qwen2.5": {
+      "name": "Qwen2.5-0.5B tokenizer",
+      "source": "Qwen/Qwen2.5-0.5B",
+      "kind": "huggingface",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "role": "Tokenizer from a decoder-only generative model family"
+    }
+  },
+  "package_versions": {
+    "numpy": "2.5.2",
+    "regex": "2026.9.3",
+    "tiktoken": "0.14.0",
+    "tokenizers": "0.23.2",
+    "transformers": "5.16.1"
+  }
+}

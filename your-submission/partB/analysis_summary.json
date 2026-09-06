@@ -1,0 +1,54 @@
+{
+  "source_files": {
+    "model_spec_sha256": "1544a15f1e1fe2d46b78d41efa02963c631cfa2f7d4ac3b044cb2767919b67f2",
+    "bench_log_sha256": "e6081ebfb5898b871929773c24ae1192dcd2e1cc6bf00aea647683ad39e98b89"
+  },
+  "capacity_from_model_spec": {
+    "kv_bytes_per_token": 114688,
+    "kv_kib_per_token": 112.0,
+    "usable_gpu_bytes": 22080000000,
+    "weight_bytes": 8400000000,
+    "non_kv_overhead_bytes": 1600000000,
+    "available_kv_bytes": 12080000000,
+    "kv_bytes_per_4096_sequence": 469762048,
+    "kv_mib_per_4096_sequence": 448.0,
+    "maximum_4096_token_sequences": 25,
+    "predicted_kv_util_at_24": 0.9333020821192053,
+    "predicted_kv_util_at_25": 0.9721896688741721
+  },
+  "log_check": {
+    "batch_24": {
+      "kv_cache_util": 0.93,
+      "preempted_seqs": 0
+    },
+    "batch_32": {
+      "kv_cache_util": 0.97,
+      "preempted_seqs": 7
+    },
+    "batch_48": {
+      "kv_cache_util": 0.97,
+      "preempted_seqs": 23
+    }
+  },
+  "b2_anomaly": {
+    "reported_tok_s_batch_24": 1607.4,
+    "reported_tok_s_batch_32": 1384.0,
+    "reported_tok_s_batch_48": 1298.5,
+    "batch_24_to_32_change_pct": -13.898220729127786,
+    "batch_24_to_48_change_pct": -19.217369665298
+  },
+  "b3_goodput": {
+    "batch_24_long_direct_tok_s": 200.91563113145847,
+    "batch_24_long_from_reported_tok_s": 200.99058207979078,
+    "batch_16_short_tok_s": 294.4644140905823,
+    "batch_16_long_tok_s": 163.9383630178107,
+    "batch_16_long_vs_short_change_pct": -44.32659595757453,
+    "batch_48_long_tok_s": 162.31424608678424
+  },
+  "cap_24_prediction_for_48_requests": {
+    "assumption": "Two sequential 24-request waves reproduce the measured batch-24 row; this is a prediction, not a measured run.",
+    "predicted_wall_clock_s": 122.32,
+    "predicted_output_goodput_tok_s": 200.91563113145847,
+    "predicted_goodput_change_vs_batch_48_pct": 23.78188358404185
+  }
+}
